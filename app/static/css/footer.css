@@ -1,0 +1,13 @@
+.footer {
+    background-color: #161313;
+    height: 10vh;
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Readex Pro', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+

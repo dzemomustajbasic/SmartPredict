@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Laptop Price Prediction Results{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/laptop.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="services-hero">
+    <h1>Welcome to the <span style="color: #6f42c1;">Laptop Price Prediction</span></h1>
+    <p>Enter the specifications of your laptop and predict its price in euros.</p>
+</div>
+<div class="predictor-section">
+    <div id="result">
+        <h2 style="font-size: 25px; color: white;">Based on the information you provided, our model predicts that your price is:</h2>
+        <p style="font-size: 35px;">€<span style="color: green;">{{ prediction }}</span></p>
+    </div>
+    <div class="try-again">
+        <a href="{% url 'home' %}">Back to home</a>
+    </div>
+</div>
+{% endblock %}

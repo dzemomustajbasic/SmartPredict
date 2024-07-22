@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="delete-user-container">
+    <h2>Delete User</h2>
+    <p>Are you sure you want to delete user "{{ user.username }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <div id="btn">
+            <button type="submit">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

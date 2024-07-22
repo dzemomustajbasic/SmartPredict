@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Predictor{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/titanic.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="services-hero">
+    <h1>Welcome aboard the <span style="color: #6f42c1;">Titanic</span></h1>
+    <p>It's April 1912. You're about to embark on the maiden voyage of the Titanic. Would you survive the journey? Predict your fate here.</p>
+</div>
+<div class="predictor-section">
+    <button class="get-started" onclick="showModelForm()">Get Started</button>
+    <div id="input-forms">
+        <form id="titanic-form" action="{% url 'titanicsurvival' %}" method="post" style="display: none;">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Titanic Survival Prediction Form</legend>
+                <label for="passengerId">PassengerId:</label>
+                <input type="number" id="passengerId" name="passengerId" required><br>
+                <label for="passenger_class">Passenger Class:</label>
+                <select id="passenger_class" name="passenger_class" required>
+                    <option value="1">1st Class</option>
+                    <option value="2">2nd Class</option>
+                    <option value="3">3rd Class</option>
+                </select><br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br>
+                <label for="sex">Gender:</label>
+                <select id="sex" name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+                <label for="siblings_spouses">Siblings/Spouses Aboard:</label>
+                <input type="number" id="siblings_spouses" name="siblings_spouses" required><br>
+                <label for="parents_children">Parents/Children Aboard:</label>
+                <input type="number" id="parents_children" name="parents_children" required><br>
+                <label for="ticket">Ticket:</label>
+                <input type="text" id="ticket" name="ticket" required><br>
+                <label for="fare">Fare:</label>
+                <input type="text" id="fare" name="fare" required><br>
+                <label for="cabin">Cabin:</label>
+                <input type="text" id="cabin" name="cabin" required><br>
+                <label for="embarked">Embarked:</label>
+                <select id="embarked" name="embarked" required>
+                    <option value="S">Southampton</option>
+                    <option value="C">Cherbourg</option>
+                    <option value="Q">Queenstown</option>
+                </select><br>
+                <button type="submit">Predict</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/titanic.js' %}"></script>
+{% endblock %}

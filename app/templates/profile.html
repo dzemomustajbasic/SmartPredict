@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>My <span style="color:#6f42c1;">Profile</span></h2>
+    <div class="messages" onclick="closeMe()">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="user-info">
+        <form method="post" action="{% url 'user-profile' user.username %}">
+            <h3>Personal Info</h3>
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" value="{{ user.email }}"></td>
+                </tr>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="first_name" value="{{ user.first_name }}"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="last_name" value="{{ user.last_name }}"></td>
+                </tr>
+            </table>
+            <div id="btn"><button type="submit">Save</button></div>
+        </form>
+
+        <form method="post" action="{% url 'change_password' user.username %}">
+            <h3>Change Password</h3>
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>New Password:</td>
+                    <td><input type="password" name="new_password"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="confirm_password"></td>
+                </tr>
+            </table>
+            <div id="btn"><button type="submit">Save</button></div>
+        </form>
+    </div>
+
+    <div class="user-predictions">
+        <h3>Titanic Survival Predictions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Passenger ID</th>
+                    <th>Class</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>SibSp</th>
+                    <th>Parch</th>
+                    <th>Ticket</th>
+                    <th>Fare</th>
+                    <th>Cabin</th>
+                    <th>Embarked</th>
+                    <th>Survived</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prediction in predictions %}
+                <tr>
+                    <td>{{ prediction.passenger_id }}</td>
+                    <td>{{ prediction.pclass }}</td>
+                    <td>{{ prediction.name }}</td>
+                    <td>{{ prediction.gender }}</td>
+                    <td>{{ prediction.age }}</td>
+                    <td>{{ prediction.sib_sp }}</td>
+                    <td>{{ prediction.parch }}</td>
+                    <td>{{ prediction.ticket }}</td>
+                    <td>{{ prediction.fare }}</td>
+                    <td>{{ prediction.cabin }}</td>
+                    <td>{{ prediction.embarked }}</td>
+                    <td>{{ prediction.survived }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="user-predictions">
+        <h3>Laptop Price Predictions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>MSI</th>
+                    <th>AMD CPU</th>
+                    <th>Intel CPU</th>
+                    <th>Intel GPU</th>
+                    <th>AMD GPU</th>
+                    <th>Acer</th>
+                    <th>Weight</th>
+                    <th>Flash</th>
+                    <th>Razer</th>
+                    <th>Workstation</th>
+                    <th>Ultrabook</th>
+                    <th>Nvidia GPU</th>
+                    <th>Gaming</th>
+                    <th>HDD</th>
+                    <th>CPU Frequency</th>
+                    <th>SSD</th>
+                    <th>Notebook</th>
+                    <th>Screen Height</th>
+                    <th>Screen Width</th>
+                    <th>Ram</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prediction in laptop_predictions %}
+                <tr>
+                    <td>{{ prediction.msi }}</td>
+                    <td>{{ prediction.amd_cpu }}</td>
+                    <td>{{ prediction.intel_cpu }}</td>
+                    <td>{{ prediction.intel_gpu }}</td>
+                    <td>{{ prediction.amd_gpu }}</td>
+                    <td>{{ prediction.acer }}</td>
+                    <td>{{ prediction.weight }}</td>
+                    <td>{{ prediction.flash }}</td>
+                    <td>{{ prediction.razer }}</td>
+                    <td>{{ prediction.workstation }}</td>
+                    <td>{{ prediction.ultrabook }}</td>
+                    <td>{{ prediction.nvidia_gpu }}</td>
+                    <td>{{ prediction.gaming }}</td>
+                    <td>{{ prediction.hdd }}</td>
+                    <td>{{ prediction.cpu_frequency }}</td>
+                    <td>{{ prediction.ssd }}</td>
+                    <td>{{ prediction.notebook }}</td>
+                    <td>{{ prediction.screen_height }}</td>
+                    <td>{{ prediction.screen_width }}</td>
+                    <td>{{ prediction.ram }}</td>
+                    <td>{{ prediction.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+

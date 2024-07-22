@@ -1,0 +1,57 @@
+.register, .login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form, .login-form {
+    min-width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-form form, .login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form label, .login-form label {
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.register-form input, .login-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.register-form button, .login-form button {
+    padding: 0.5rem;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
+}
+
+.register-form button:hover, .login-form button:hover {
+    background-color: #563d7c;
+}
+
+.register-form .errorlist, .login-form .errorlist {
+    color: red;
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding-left: 0;
+}

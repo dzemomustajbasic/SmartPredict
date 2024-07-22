@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<div class="main">
+    <div class="hero">
+        <p>Explore Your <span class="purple-text">Predictions</span></p>
+        <p>with <span class="purple-text">Smart</span>Predict</p>
+        <p class="description">Predict like a champ with SmartPredict! Our ML models have you covered.</p>
+    </div>
+    <div class="ai-section">
+        <h1 class="ai-title">Core AI Techniques</h1>
+        <div class="ai-content">
+            <div class="ai-image">
+                <img src="{% static 'images/aidev2.jpeg' %}" alt="AI Image">
+            </div>
+            <div class="ai-techniques">
+                <div class="technique">
+                    <div class="circle">1</div>
+                    <h2>Classification</h2>
+                </div>
+                <div class="technique">
+                    <div class="circle">2</div>
+                    <h2>Regression</h2>
+                </div>
+                <div class="technique">
+                    <div class="circle">3</div>
+                    <h2>Neural Networks</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="workflow">
+        <h1 class="workflow-title">How It Works</h1>
+        <img src="{% static 'images/workflow.jpg' %}" alt="">
+    </div>
+    <div class="intro">
+        <div class="intro-description">
+            <h1>Check <span style="color: #6f42c1;">Out</span> Our <span style="color: #6f42c1;">Models</span></h1>
+            <h2>Explore our predictive models tailored for diverse needs. 
+                From the historical Titanic Survival Predictions to the intricate details of Laptop Price Predictions, 
+                our models empower you with accurate insights and forecasts. Dive into data-driven decisions with confidence.</h2>
+        </div>
+        <div class="intro-models">
+            <div class="titanic">
+                <a href="{% url 'titanicsurvival' %}">
+                    <img src="{% static 'images/titanic.jpg' %}" alt="Titanic">
+                    <div class="overlay">
+                        <div class="text">Titanic Survival Predictions</div>
+                    </div>
+                </a>
+            </div>
+            <div class="laptopprice">
+                <a href="{% url 'laptop' %}">
+                    <img src="{% static 'images/laptop.jpg' %}" alt="Laptop Prices">
+                    <div class="overlay">
+                        <div class="text">Laptop Price Predictions</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+

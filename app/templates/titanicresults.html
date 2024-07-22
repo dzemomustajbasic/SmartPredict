@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Predictor Results{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/titanic.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="services-hero">
+    <h1>Welcome aboard the <span style="color: #6f42c1;">Titanic</span></h1>
+    <p>It's April 1912. You're about to embark on the maiden voyage of the Titanic. Would you survive the journey? Predict your fate here.</p>
+</div>
+<div class="predictor-section">
+    <div id="result">
+        <h2 style="font-size: 25px; color: white;">Based on the information you provided, our model predictst:</h2>
+        <p style="font-size: 35px;">{% if prediction == 1 %}<span style="color: green;">you would survive.</span>{% else %}<span style="color: red;">you would not survive.</span>{% endif %}</p>
+    </div>
+    <div class="try-again">
+        <a href="{% url 'home' %}">Back to home</a>
+    </div>
+</div>
+{% endblock %}

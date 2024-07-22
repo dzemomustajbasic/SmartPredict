@@ -1,0 +1,126 @@
+.header {
+    height: 10vh;
+    background-color: #161313;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+    transition: background-color 0.9s ease; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    height: 100%;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    min-height: 100%;
+    min-width: 33%
+}
+
+.menu a:hover {
+    color: #6f42c1;
+    transition: color 0.3s ease-in-out;
+}
+
+.user a:hover{
+    transition: color 0.3s ease-in-out;
+    color: #6f42c1;
+    cursor: pointer;
+}
+
+.menu a {
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    min-width: 33%;
+    gap: 30px;
+}
+
+.user a {
+    color: white; 
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 33%;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.logo img {
+    max-width: 33%;
+    min-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #161313;
+    min-width: 160px;
+    z-index: 1000;
+    top: 100%; 
+    margin-top: 20px; 
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 15px 8px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 16px;
+}
+
+.dropdown:hover .dropbtn {
+    color: #6f42c1;
+    transition: color 0.3s ease-in-out;
+}
+
+.show {
+    display: block;
+}

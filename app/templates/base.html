@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SmartPredict{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header_.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap"/>
+
+    {% block extra_head %}{% endblock %}
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, black, #6f42c1);
+        margin: 0;
+        font-family: "Readex Pro", sans-serif;
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1; 
+      } 
+    </style>
+  </head>
+  <body>
+    {% include 'header.html' %}
+
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

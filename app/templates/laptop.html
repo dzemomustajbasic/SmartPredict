@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Laptop Price Predictor{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/laptop.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="services-hero">
+    <h1>Welcome to the <span style="color: #6f42c1;">Laptop Price Prediction</span></h1>
+    <p>Enter the specifications of your laptop and predict its price in euros.</p>
+</div>
+<div class="predictor-section">
+    <button class="get-started" onclick="showModelForm()">Get Started</button>
+    <div id="input-forms">
+        <form id="laptop-form" action="{% url 'laptop' %}" method="post" style="display: none;">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Laptop Price Prediction Form</legend>
+                <div class="grid-container">
+                    <label for="MSI">MSI:</label>
+                    <select id="MSI" name="MSI">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="AMD_CPU">AMD CPU:</label>
+                    <select id="AMD_CPU" name="AMD_CPU">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Intel_CPU">Intel CPU:</label>
+                    <select id="Intel_CPU" name="Intel_CPU">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Intel_GPU">Intel GPU:</label>
+                    <select id="Intel_GPU" name="Intel_GPU">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="AMD_GPU">AMD GPU:</label>
+                    <select id="AMD_GPU" name="AMD_GPU">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Acer">Acer:</label>
+                    <select id="Acer" name="Acer">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Weight">Weight:</label>
+                    <input type="text" id="Weight" name="Weight">
+                    <label for="Flash">Flash:</label>
+                    <select id="Flash" name="Flash">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Razer">Razer:</label>
+                    <select id="Razer" name="Razer">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Workstation">Workstation:</label>
+                    <select id="Workstation" name="Workstation">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Ultrabook">Ultrabook:</label>
+                    <select id="Ultrabook" name="Ultrabook">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Nvidia_GPU">Nvidia GPU:</label>
+                    <select id="Nvidia_GPU" name="Nvidia_GPU">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Gaming">Gaming:</label>
+                    <select id="Gaming" name="Gaming">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="HDD">HDD:</label>
+                    <select id="HDD" name="HDD">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="CPU_Frequency">CPU Frequency:</label>
+                    <input type="text" id="CPU_Frequency" name="CPU_Frequency">
+                    <label for="SSD">SSD:</label>
+                    <select id="SSD" name="SSD">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Notebook">Notebook:</label>
+                    <select id="Notebook" name="Notebook">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="Screen_Height">Screen Height:</label>
+                    <input type="text" id="Screen_Height" name="Screen_Height">
+                    <label for="Screen_Width">Screen Width:</label>
+                    <input type="text" id="Screen_Width" name="Screen_Width">
+                    <label for="Ram">Ram:</label>
+                    <input type="text" id="Ram" name="Ram">
+                </div>
+                <button type="submit">Predict</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/laptop.js' %}"></script>
+{% endblock %}

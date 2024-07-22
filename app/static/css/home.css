@@ -1,0 +1,253 @@
+.hero {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.purple-text {
+    color: #6f42c1;
+}
+
+.hero p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.description {
+    font-size: 16px;
+    color: #d1d1d1;
+    padding-top: 20px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 50px;
+    border: 2px solid rgba(129, 90, 245, .482);
+    border-radius: 40px;
+    background-color: rgba(37,29,51,255);
+    color: white;
+    margin-bottom: 50px;
+}
+.intro-description{
+    border-radius: 40px;
+    border: 1px solid rgba(129, 90, 245, .482);
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-models {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    overflow: hidden; 
+    opacity: 0;
+}
+
+.intro-models.show {
+    opacity: 1; 
+    animation: slideIn 2s ease forwards; 
+    transform: translateY(0); 
+}
+
+.intro-description.show {
+    opacity: 1; 
+    animation: slideIn 1s ease-in; 
+    transform: translateY(0); 
+}
+
+.intro-models div {
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-models img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    border-radius: 40px;
+    transition: opacity 0.5s;
+}
+
+.intro-models .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.intro-models .text {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.intro-models div:hover img {
+    opacity: 0;
+}
+
+.intro-models div:hover .overlay {
+    opacity: 1;
+}
+
+.ai-section {
+    margin: 50px 300px;
+}
+
+.ai-title {
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ai-content {
+    display: flex;
+    gap: 20px;
+    background-color: rgba(37,29,51,255);
+    padding: 50px;
+    border: 2px solid rgba(129, 90, 245, .482);
+    border-radius: 40px;
+}
+
+.ai-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    border-radius: 40px;
+}
+
+.read-more:hover {
+    color: #6f42c1;
+}
+
+
+.technique {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #272727;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.technique h2 {
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+.technique h3 {
+    color: #d1d1d1;
+    padding-left: 5px;
+    font-size: 17px;
+    margin: 2px 0 0 0;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 20px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border: 2px solid rgba(129, 90, 245, .482);
+}
+
+.ai-image {
+    position: relative;
+    width: 50%;
+    opacity: 0; 
+    transform: translateX(-200px); 
+    transition: opacity 1s, transform 1.5s; 
+}
+
+.ai-image.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.ai-techniques {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    width: 50%;
+    opacity: 0;
+    transform: translateX(200px); 
+    transition: opacity 1s, transform 1.5s;
+}
+
+.ai-techniques.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.workflow {
+    margin: 50px 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(37,29,51,255);
+    padding: 50px;
+    border: 2px solid rgba(129, 90, 245, .482);
+    border-radius: 40px;
+    opacity: 0;
+    transform: translateY(300px); 
+    transition: opacity 1s, transform 1.5s;
+}
+
+.workflow h1{
+    color: white;
+}
+.workflow img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    border-radius: 40px;
+}
+
+.workflow.showimg {
+    opacity: 1;
+    transform: translateY(0);
+}

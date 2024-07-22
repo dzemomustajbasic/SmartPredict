@@ -1,0 +1,32 @@
+{% load static %}
+<div class="header">
+    <div class="container">
+        <div class="logo"><img src="{% static 'images/logo1.png' %}" alt=""></div>
+        <div class="menu">
+            <a href="{% url 'home' %}">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick=toggleDropdown()>Services</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'titanicsurvival' %}">Titanic Survival</a>
+                    <a href="{% url 'laptop' %}">Laptop Price</a>
+                </div>
+            </div>
+        </div>
+        <div class="user">
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                    <a href="{% url 'admin-dashboard' %}">Dashboard</a>
+                {% else %}
+                    <a href="{% url 'user-profile' user.username %}">{{ user.username }}</a>
+                {% endif %}
+                <a href="{% url 'logout' %}">Logout</a>
+
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </div>
+    <script src="{% static 'js/header.js' %}"></script>
+</div>
+
