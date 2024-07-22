@@ -35,4 +35,5 @@ SmartPredict integrates two end-to-end machine learning models:
 
 - ### If you want to clone this repository and run it on your local machine, please note that you may need to copy and paste the directory utilities into your environment due to an issue I encountered when loading the pipeline from Jupyter Notebook into views.py.
 
+![Opis slike](SmartPredict/screenshots/Screenshot_629.png)
 
