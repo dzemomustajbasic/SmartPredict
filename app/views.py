@@ -80,11 +80,11 @@ def titanic_survival(request):
         }
         df = pd.DataFrame(data)
 
-        pipeline_path = 'C:/Users/Lenovo/Desktop/SmartPredict/smartpredict/app/pipeline.pkl'
+        pipeline_path = 'pipeline.pkl'
         pipeline = joblib.load(pipeline_path) 
-        model_path = ('C:/Users/Lenovo/Desktop/SmartPredict/smartpredict/app/model.pkl')
+        model_path = ('model.pkl')
         model = joblib.load(model_path)
-        scaler_path = ('C:/Users/Lenovo/Desktop/SmartPredict/smartpredict/app/scaler.pkl')
+        scaler_path = ('scaler.pkl')
         scaler = joblib.load(scaler_path)
 
         df = pipeline.transform(df)
@@ -226,9 +226,9 @@ def laptop_price_prediction(request):
         }
         df = pd.DataFrame(data)
 
-        model_path = ('C:/Users/Lenovo/Desktop/SmartPredict/smartpredict/app/laptop_model.pkl')
+        model_path = ('laptop_model.pkl')
         model = joblib.load(model_path)
-        scaler_path = ('C:/Users/Lenovo/Desktop/SmartPredict/smartpredict/app/forest_scaler.pkl')
+        scaler_path = ('forest_scaler.pkl')
         scaler = joblib.load(scaler_path)
 
         scaled_df = scaler.transform(df)
